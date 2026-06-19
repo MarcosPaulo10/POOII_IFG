@@ -24,3 +24,8 @@ hs_err_pid*
 replay_pid*
 
 target/
+
+# arquivos locais de ajuda (nao fazem parte da entrega)
+COMO-TESTAR.txt
+testar-api.bat
+iniciar-api.bat
