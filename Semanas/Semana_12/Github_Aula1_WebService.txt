@@ -1,0 +1,6 @@
+Github - Aula 1 - WebService (Entity e Repository)
+
+Repositório de referência para a atividade da Semana 15:
+https://github.com/DoryGR/WebService-RestFull-2026
+
+Backend - Spring Boot, JPA, RESTful, Service Web

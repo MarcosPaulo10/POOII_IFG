@@ -1,0 +1,157 @@
+{
+	"info": {
+		"name": "Biblioteca API - Trabalho WebService",
+		"description": "Coleção para testar todos os endpoints obrigatórios do trabalho.\n\nBase URL: http://localhost:8080/sistema-biblioteca\n\nOrdem sugerida:\n1. POST Autor\n2. GET Autores / GET Autor por ID\n3. POST Livro\n4. GET Livros / GET Livro por ID / GET Livros por Autor\n5. PUT Autor e PUT Livro\n6. DELETE Livro e DELETE Autor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080/sistema-biblioteca"
+		},
+		{
+			"key": "autorId",
+			"value": "1"
+		},
+		{
+			"key": "livroId",
+			"value": "1"
+		}
+	],
+	"item": [
+		{
+			"name": "Autores",
+			"item": [
+				{
+					"name": "GET - Listar todos os autores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/autores"
+					}
+				},
+				{
+					"name": "GET - Buscar autor por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/autores/{{autorId}}"
+					}
+				},
+				{
+					"name": "POST - Cadastrar autor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Machado de Assis\",\n  \"nacionalidade\": \"Brasileira\",\n  \"dataNascimento\": \"1839-06-21\"\n}"
+						},
+						"url": "{{baseUrl}}/autores"
+					}
+				},
+				{
+					"name": "PUT - Atualizar autor",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Machado de Assis\",\n  \"nacionalidade\": \"Brasileiro\",\n  \"dataNascimento\": \"1839-06-21\"\n}"
+						},
+						"url": "{{baseUrl}}/autores/{{autorId}}"
+					}
+				},
+				{
+					"name": "DELETE - Remover autor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/autores/{{autorId}}"
+					}
+				}
+			]
+		},
+		{
+			"name": "Livros",
+			"item": [
+				{
+					"name": "GET - Listar todos os livros",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/livros"
+					}
+				},
+				{
+					"name": "GET - Buscar livro por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/livros/{{livroId}}"
+					}
+				},
+				{
+					"name": "GET - Listar livros por autor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/livros/autor/{{autorId}}"
+					}
+				},
+				{
+					"name": "POST - Cadastrar livro",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"titulo\": \"Dom Casmurro\",\n  \"isbn\": \"978-8535910557\",\n  \"anoPublicacao\": 1899,\n  \"numeroPaginas\": 256,\n  \"autor\": {\n    \"id\": 1\n  }\n}"
+						},
+						"url": "{{baseUrl}}/livros"
+					}
+				},
+				{
+					"name": "PUT - Atualizar livro",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"titulo\": \"Dom Casmurro - Edição Especial\",\n  \"isbn\": \"978-8535910557\",\n  \"anoPublicacao\": 1899,\n  \"numeroPaginas\": 300,\n  \"autor\": {\n    \"id\": 1\n  }\n}"
+						},
+						"url": "{{baseUrl}}/livros/{{livroId}}"
+					}
+				},
+				{
+					"name": "DELETE - Remover livro",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/livros/{{livroId}}"
+					}
+				}
+			]
+		}
+	]
+}

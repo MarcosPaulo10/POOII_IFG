@@ -1,0 +1,8 @@
+Github - Aula 2 - WebService (Entity, Repository, Service e Resource)
+
+Repositório de referência:
+https://github.com/DoryGR/WebService-RestFull-2026
+
+Backend - Spring Boot, JPA, RESTful, Service Web
+
+Camadas: Entity, Repository, Service e Resource
