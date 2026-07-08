@@ -1,0 +1,21 @@
+<div class="curso-form-container">
+  <h2>{{ modoEdicao ? 'Editar Curso' : 'Novo Curso' }}</h2>
+
+  <form [formGroup]="form" (ngSubmit)="salvar()">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nome do Curso</mat-label>
+      <input matInput formControlName="nomeCurso">
+      @if (form.get('nomeCurso')?.hasError('required')) {
+        <mat-error>O nome do curso é obrigatório</mat-error>
+      }
+      @if (form.get('nomeCurso')?.hasError('minlength')) {
+        <mat-error>Mínimo de 3 caracteres</mat-error>
+      }
+    </mat-form-field>
+
+    <div class="acoes">
+      <button mat-raised-button color="primary" type="submit">Salvar</button>
+      <button mat-button type="button" (click)="cancelar()">Cancelar</button>
+    </div>
+  </form>
+</div>
