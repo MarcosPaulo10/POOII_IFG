@@ -6,7 +6,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { Aluno } from '../../models/aluno';
 import { AlunoService } from '../../services/aluno.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-aluno-list',
@@ -20,7 +19,7 @@ export class AlunoListComponent implements OnInit {
   dataSource = new MatTableDataSource<Aluno>([]);
   colunasExibidas: string[] = ['nome', 'sexo', 'dt_nasc', 'acoes'];
 
-  constructor(private alunoService: AlunoService, private router: Router) { }
+  constructor(private alunoService: AlunoService) { }
 
   ngOnInit(): void {
     this.buscarAlunos();
